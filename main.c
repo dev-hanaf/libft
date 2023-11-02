@@ -6,12 +6,13 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:22:26 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/02 15:56:07 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/02 21:55:49 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+int printf(const char*, ...);
 
 //ft_isalpha
 /*int main(void)
@@ -42,8 +43,42 @@
 }*/
 
 //ft_isprint
-int main(void)
+/*int main(void)
 {
     printf("%d\n",ft_isprint(200));
     return (0);
+}*/
+
+//ft_strlen
+/*int main(void)
+{
+    printf("%ld\n",ft_strlen(""));
+    return (0);
+}*/
+
+//ft_memeset
+/*int main() {
+    char str[20]; // Example buffer
+
+    ft_memset(str, 'A', sizeof(str)); // Fills the buffer with 'A's
+    int i = 0;
+    while ( i < sizeof(str)) {
+        printf("%c", str[i]); // Output the contents of the buffer
+        i++;
+    }
+
+    return 0;
+}*/
+//ft_memeset
+int main() {
+    char str[20]; // Example buffer
+
+    ft_bzero(str, sizeof(str)); // Fills the buffer with 'A's
+    int i = 0;
+    while ( i < sizeof(str)) {
+        printf("%c", str[i]); // Output the contents of the buffer
+        i++;
+    }
+
+    return 0;
 }
