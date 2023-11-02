@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 23:00:01 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/02 15:55:01 by ahanaf           ###   ########.fr       */
+/*   Created: 2023/11/02 15:30:28 by ahanaf            #+#    #+#             */
+/*   Updated: 2023/11/02 15:33:47 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-
-#define LIBFT_H
-
-int ft_isalpha(int c);
-int ft_isdigit(int c);
-int ft_isalnum(int c);
-int ft_isascii(int c);
-int ft_isprint(int c);
-
-
-#endif
+int ft_isdigit(int c)
+{
+    if(c >= 0 && c <= 9)
+        return (1);
+    return (0);
+}
