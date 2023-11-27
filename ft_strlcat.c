@@ -6,34 +6,42 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 08:16:43 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/18 08:25:35 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/27 11:16:01 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	len_src;
-	size_t	len_dst;
-	size_t	i;
+    size_t    src_len;
+    size_t    dst_len;
+    
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	i = 0;
-	if (size == 0 && !dst)
-		return (len_dst + len_src);
-	if (size != 0)
-	{
-		while (src[i] && (len_dst + i < size - 1))
-		{
-			dst[len_dst + i] = src[i];
-			i++;
-		}
-	}
-	dst[len_dst + i] = 0;
-	if (size > len_dst)
-		return (len_dst + len_src);
-	else
-		return (size + len_src);
+    src_len = ft_strlen(src);
+    dst_len = ft_strlen(dst);
+
+    if (dst_len >= size)
+        dst_len = size;
+
+    if (dst_len == size)
+        return (size + src_len);
+    if (src_len < size - dst_len)
+        ft_memcpy(dst + dst_len, src, src_len + 1);
+    else
+    {
+
+        ft_memcpy(dst + dst_len, src, size - dst_len - 1);
+        dst[size - 1] = '\0';
+    }
+    return (dst_len + src_len);
+}
+
+#include <bsd/string.h>
+
+int main()
+{
+	printf("%zu\n",strlcat("abcd","qwer",4));
+	printf("%zu\n",ft_strlcat("abcd","qwer",4));
+	
 }

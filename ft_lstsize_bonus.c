@@ -6,7 +6,7 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 02:45:52 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/24 06:21:00 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/25 18:33:37 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_lstsize(t_list *lst)
 	t_list	*tmp;
 	int		i;
 
+	if (!lst)
+		return (0);
 	tmp = lst;
 	i = 0;
 	while (tmp)

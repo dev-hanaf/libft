@@ -6,7 +6,7 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 02:08:52 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/18 06:53:04 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/26 01:22:54 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	temp_dest = (unsigned char *)dest;
 	temp_src = (unsigned char *)src;
+	if (dest == src)
+		return (dest);
 	if (src > dest)
 	{
 		i = 0;

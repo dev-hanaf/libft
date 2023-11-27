@@ -6,16 +6,18 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:31:16 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/18 02:08:42 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/26 01:22:37 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!src)
-		return (NULL);
+	if (src == dest)
+		return (dest);
 	i = 0;
 	if (n > 0)
 	{
@@ -27,13 +29,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return ((void *)dest);
 }
-
-/*int main()
+/*
+int main()
 {
-    const char *src = "hello";
-    char *dst = "hello";
-    ft_memcpy(dst,src,5);
-    printf("dyali => %s\n",dst);
+    printf("%s\n", (char *)ft_memcpy("dst","dst",3));
     
     //const char *src2 = "hello";
     //char *dst2 = "hello";

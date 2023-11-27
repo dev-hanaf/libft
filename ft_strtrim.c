@@ -6,7 +6,7 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 02:07:32 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/19 05:03:41 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/25 02:53:36 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	int	j;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
 	j = ft_strlen(s1) - 1;
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(""));

@@ -6,7 +6,7 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 03:21:52 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/23 03:38:33 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/25 18:36:40 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd == -1)
+	if (fd < 0)
 		return ;
 	write(fd, &c, 1);
 }

@@ -1,26 +1,3 @@
-#CC = cc
-#CFLAGS = -Wall -Wextra -Werror
-#NAME = libft.a
-#MANDATORY = ft_isalpha.c ft_isdigit.c
-
-#OBJS = $(MANDATORY:.c=.o)
-
-#all:$(NAME)
-
-#$(NAME):$(OBJS)
-#	$(CC) $(CFLAGS) $(MANDATORY) -c
-#	ar rcs $(NAME) $(OBJS)
-
-
-
-#clean:
-#	@rm *.o
-
-#fclean:clean
-#	@rm -f $(NAME)
-
-#.PHONY: fclean clean all
-
 RED = \033[0;31m
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
@@ -36,27 +13,29 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isalnum.c \
 		ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
 		ft_split.c  ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-		ft_putnbr_fd.c 
+		ft_putnbr_fd.c ft_memcpy.c
  
-BNS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-		ft_lstlast_bonus.c 
+BNS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstadd_back_bonus.c ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 
 OBJ = $(SRC:.c=.o)
 OBJ_BNS = $(BNS:.c=.o)
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 CC = cc
 
-all: $(NAME) header
+
+
+all: header $(NAME) 
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ_BNS) header
-	ar rcs $(NAME) $(OBJ_BNS)
+bonus: header $(OBJ_BNS) 
 
-%.o: %.c libft.h
-	$(CC) $(FLAGS) -c $< -o $@
+$(OBJ_BNS):
+	$(CC) $(CFLAGS) -c $(BNS)
+	ar rcs $(NAME) $(OBJ_BNS)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BNS)
@@ -64,7 +43,7 @@ clean:
 fclean: clean
 	rm -f $(NAME) $(OBJ_BNS)
 
-re: fclean all
+re :fclean all 
 
 .PHONY: all clean fclean re
 
@@ -82,4 +61,4 @@ header:
     
 	@echo "$(NC)"  
 	
-	@printf "$(GREEN)ahanaf Sama!$(NC)\n"
+	@printf "$(YELLOW)ahanaf Sama!$(NC)\n"

@@ -6,7 +6,7 @@
 /*   By: ahanaf <ahanaf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 22:55:24 by ahanaf            #+#    #+#             */
-/*   Updated: 2023/11/24 02:32:50 by ahanaf           ###   ########.fr       */
+/*   Updated: 2023/11/26 01:38:24 by ahanaf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,15 @@ t_list	*ft_lstnew(void *content)
 	head->next = NULL;
 	return (head);
 }
+/*int main()
+{
+	t_list *new;
+	int a = 4;
+
+	new = ft_lstnew(&a);
+	
+	printf("%p\n", (int *)new->content);
+	printf("%p\n", &a);
+	printf("%d\n", *(int *)new->content);
+
+}*/
